@@ -390,6 +390,18 @@ Alarm is stopped!
 
 ---
 
+# 🖼️ Output Screenshots
+
+The following screenshot shows the alarm application running on the Android device, including the alarm creation screen and a configured alarm card.
+
+![Alarm Application Output](screenshots/practical4_output_1.webp)
+
+*Figure 1: Alarm application with the Create Alarm screen and configured alarm.*
+
+> **Note:** Additional output screenshots will be added here as they are uploaded.
+
+---
+
 # 📁 Important Files
 
 ```
