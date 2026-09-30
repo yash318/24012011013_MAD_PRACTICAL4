@@ -363,22 +363,20 @@ The following section is reserved for the **four output screenshots** of the pra
 
 ### 1. Alarm Main Screen
 
-![Alarm Main Screen](screenshots/practical4_output_1.webp)
+![Alarm Main Screen](screenshots/practical4_output_1.png)
 
 ### 2. Time Picker Dialog
 
-![Time Picker Dialog](screenshots/practical4_output_2.webp)
+![Time Picker Dialog](screenshots/practical4_output_2.png)
 
 ### 3. Alarm Set / Alarm Card
 
-![Alarm Set Screen](screenshots/practical4_output_3.webp)
+![Alarm Set Screen](screenshots/practical4_output_3.png)
 
 ### 4. Alarm Stopped Toast
 
-![Alarm Stopped Toast](screenshots/practical4_output_4.webp)
+![Alarm Stopped Toast](screenshots/practical4_output_4.png)
 
-> **Screenshot folder:** `screenshots/`  
-> Upload the remaining screenshots with the exact filenames `practical4_output_2.webp`, `practical4_output_3.webp`, and `practical4_output_4.webp` so they appear automatically in this README.
 
 ---
 
