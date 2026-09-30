@@ -5,13 +5,15 @@ plugins {
 android {
     namespace = "com.example.a24012011013_mad_practical4"
     compileSdk {
-        version = release(37)
+        version = release(36) {
+            minorApiLevel = 1
+        }
     }
 
     defaultConfig {
         applicationId = "com.example.a24012011013_mad_practical4"
-        minSdk = 24
-        targetSdk = 37
+        minSdk = 31
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
