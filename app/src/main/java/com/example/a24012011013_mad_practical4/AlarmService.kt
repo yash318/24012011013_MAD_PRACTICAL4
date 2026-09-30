@@ -4,6 +4,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
+import android.content.res.AssetFileDescriptor
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Build
@@ -33,7 +34,6 @@ class AlarmService : Service() {
             .setOngoing(true)
             .build()
 
-        // Promote the service immediately after it is started.
         ServiceCompat.startForeground(
             this,
             NOTIFICATION_ID,
@@ -42,14 +42,20 @@ class AlarmService : Service() {
         )
 
         if (mp == null) {
-            mp = MediaPlayer.create(this, R.raw.alarm)
-            mp?.setAudioAttributes(
-                AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_ALARM)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                    .build()
-            )
-            mp?.isLooping = true
+            val afd: AssetFileDescriptor = resources.openRawResourceFd(R.raw.alarm)
+
+            mp = MediaPlayer().apply {
+                setAudioAttributes(
+                    AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_ALARM)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .build()
+                )
+                setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
+                afd.close()
+                prepare()
+                isLooping = true
+            }
         }
 
         Log.i(TAG, "onStartCommand: starting alarm media player")
@@ -82,7 +88,5 @@ class AlarmService : Service() {
         super.onDestroy()
     }
 
-    override fun onBind(intent: Intent): IBinder? {
-        return null
-    }
+    override fun onBind(intent: Intent): IBinder? = null
 }
